@@ -19,4 +19,4 @@ jobs:
       env:
         webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
         webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
-        data: '{"content": "@everyone github.workflow is job.status", "allowed_mentions": {"parse": ["everyone"]}}'
+        data: '{"content": "@everyone ${{github.workflow}} is ${{job.status}}", "allowed_mentions": {"parse": ["everyone"]}}'

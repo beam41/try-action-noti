@@ -15,7 +15,8 @@ jobs:
       run: echo ${{github.workflow}} is ${{job.status}}
     - name: Webhook
       if: ${{ always() }}
-      uses: joelwmale/webhook-action@master
+      uses: distributhor/workflow-webhook@v1
       env:
-        WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK }}
+        webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
+        webhook_secret: ${{ secrets.WEBHOOK_SECRET }}:  
         data: "Hello from github actions!"

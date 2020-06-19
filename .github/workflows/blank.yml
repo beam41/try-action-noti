@@ -18,5 +18,5 @@ jobs:
       uses: distributhor/workflow-webhook@v1
       env:
         webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
-        webhook_secret: ${{ secrets.WEBHOOK_SECRET }}:  
+        webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
         data: "Hello from github actions!"

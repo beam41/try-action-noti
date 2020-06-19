@@ -13,3 +13,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Echo Result
       run: echo ${{github.workflow}} is ${{job.status}}
+    - name: Webhook
+      if: ${{ always() }}
+      uses: joelwmale/webhook-action@master
+      env:
+        WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK }}
+        data: "{'content': '@everyone ${{github.workflow}} is ${{job.status}}', 'allowed_mentions': { 'parse': ['everyone'] }}"

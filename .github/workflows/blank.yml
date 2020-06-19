@@ -12,4 +12,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Echo Result
-      run: echo ${{name}} is ${{job.status}}
+      run: echo ${{github.workflow}} is ${{job.status}}
